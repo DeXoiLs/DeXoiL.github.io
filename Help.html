@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Help - DeXoiL Store</title>
+<style>
+/* RESET & BODY */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f5f5f5;
+    color: #333;
+    line-height: 1.5;
+}
+
+/* HEADER */
+header {
+    background: #03ac0e;
+    color: white;
+    padding: 15px 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+/* SEARCH BAR */
+.search-bar {
+    display: flex;
+    margin-bottom: 25px;
+}
+
+.search-bar input[type="text"] {
+    flex: 1;
+    padding: 10px 15px;
+    border-radius: 6px 0 0 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    background: #03ac0e;
+    color: white;
+    border: none;
+    border-radius: 0 6px 6px 0;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.search-bar button:hover {
+    background: #02940c;
+}
+
+/* HELP TOPICS */
+.help-topics {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.topic-card {
+    background: white;
+    padding: 15px 12px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+.topic-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.topic-card h3 {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #03ac0e;
+}
+
+.topic-card p {
+    font-size: 13px;
+    color: #555;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    font-size: 13px;
+    color: #777;
+    margin-top: 40px;
+}
+
+/* RESPONSIVE */
+@media(max-width: 600px) {
+    .search-bar {
+        flex-direction: column;
+    }
+    .search-bar input[type="text"] {
+        border-radius: 6px 6px 0 0;
+        margin-bottom: 5px;
+    }
+    .search-bar button {
+        border-radius: 0 0 6px 6px;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+    DeXoiL Store Help Center
+</header>
+
+<div class="container">
+
+    <!-- SEARCH BAR -->
+    <div class="search-bar">
+        <input type="text" placeholder="Cari bantuan...">
+        <button>Cari</button>
+    </div>
+
+    <!-- HELP TOPICS -->
+    <div class="help-topics">
+        <div class="topic-card">
+            <h3>Akun & Keamanan</h3>
+            <p>Pelajari cara mengamankan akun dan mengelola informasi pribadi.</p>
+        </div>
+        <div class="topic-card">
+            <h3>Pesanan</h3>
+            <p>Informasi tentang cara memesan, melacak, dan mengelola pesanan.</p>
+        </div>
+        <div class="topic-card">
+            <h3>Pembayaran</h3>
+            <p>Pelajari metode pembayaran, tagihan, dan refund.</p>
+        </div>
+        <div class="topic-card">
+            <h3>Pengiriman</h3>
+            <p>Informasi tentang ongkir, jasa pengiriman, dan estimasi tiba.</p>
+        </div>
+        <div class="topic-card">
+            <h3>Produk & Penjual</h3>
+            <p>Cara membeli, meninjau produk, dan berinteraksi dengan penjual.</p>
+        </div>
+        <div class="topic-card">
+            <h3>Promo & Voucher</h3>
+            <p>Pelajari cara menggunakan voucher, cashback, dan promo DeXoiL Store.</p>
+        </div>
+        <div class="topic-card">
+            <h3>Layanan DeXoiL Store</h3>
+            <p>Informasi tentang fitur DeXoiL Store seperti TopAds, TopUp, dan lainnya.</p>
+        </div>
+        <div class="topic-card">
+            <h3>Lainnya</h3>
+            <p>Bantuan umum lainnya yang tidak termasuk kategori di atas.</p>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 DeXoiL Store. Semua hak dilindungi.
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tokopedia Clone List</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f0f3f7;
+            padding: 40px 20px;
+        }
+
+        /* Container Grid */
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(188px, 1fr));
+            gap: 16px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Card Produk */
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 1px 6px 0 rgba(0,0,0,0.12);
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 12px 0 rgba(0,0,0,0.15);
+        }
+
+        /* Bagian Gambar */
+        .image-box {
+            width: 100%;
+            aspect-ratio: 1/1;
+            overflow: hidden;
+        }
+
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Bagian Konten */
+        .content {
+            padding: 8px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-name {
+            font-size: 14px;
+            line-height: 18px;
+            color: #212121;
+            margin-bottom: 4px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            height: 36px; /* 2 baris x 18px */
+        }
+
+        .price {
+            font-size: 16px;
+            font-weight: 700;
+            color: #212121;
+            margin-bottom: 4px;
+        }
+
+        /* Diskon & Harga Coret (Opsional) */
+        .discount-container {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-bottom: 4px;
+        }
+
+        .discount-badge {
+            background-color: #ffeaef;
+            color: #ff5c84;
+            font-size: 10px;
+            font-weight: 800;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        .strike-price {
+            font-size: 12px;
+            color: #9fa6b0;
+            text-decoration: line-through;
+        }
+
+        /* Lokasi & Toko */
+        .shop-info {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-top: 4px;
+        }
+
+        .power-merchant {
+            width: 16px;
+            height: 16px;
+        }
+
+        .location {
+            font-size: 12px;
+            color: #6d7588;
+        }
+
+        /* Rating & Terjual */
+        .rating-info {
+            display: flex;
+            align-items: center;
+            font-size: 12px;
+            color: #6d7588;
+            margin-top: 6px;
+            gap: 4px;
+        }
+
+        .star {
+            color: #ffc400;
+            font-size: 12px;
+        }
+
+        .separator {
+            font-size: 8px;
+            color: #d6ffde; /* Tipis */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <a href="#" class="card">
+        <div class="image-box">
+            <img src="https://images.tokopedia.net/img/cache/700/VqbjIT/2023/1/13/468837e2-4113-43c3-9877-3e1986427382.jpg" alt="Produk">
+        </div>
+        <div class="content">
+            <div class="product-name">Logitech G Pro X Superlight Wireless Gaming Mouse - Putih</div>
+            <div class="price">Rp1.849.000</div>
+            <div class="discount-container">
+                <span class="discount-badge">15%</span>
+                <span class="strike-price">Rp2.100.000</span>
+            </div>
+            <div class="shop-info">
+                <img class="power-merchant" src="https://images.tokopedia.net/img/official_store/os_badge_80.png" alt="OS">
+                <span class="location">Jakarta Utara</span>
+            </div>
+            <div class="rating-info">
+                <span class="star">★</span> 5.0 | Terjual 2rb+
+            </div>
+        </div>
+    </a>
+
+    <a href="#" class="card">
+        <div class="image-box">
+            <img src="https://images.tokopedia.net/img/cache/700/VqbjIT/2022/9/19/7e95b058-299a-41d3-9f89-c4f4d88e001c.jpg" alt="Produk">
+        </div>
+        <div class="content">
+            <div class="product-name">Apple iPhone 15 Pro 128GB - Natural Titanium</div>
+            <div class="price">Rp18.999.000</div>
+            <div class="shop-info">
+                <img class="power-merchant" src="https://images.tokopedia.net/img/official_store/os_badge_80.png" alt="OS">
+                <span class="location">Jakarta Pusat</span>
+            </div>
+            <div class="rating-info">
+                <span class="star">★</span> 4.9 | Terjual 500+
+            </div>
+        </div>
+    </a>
+
+    <a href="#" class="card">
+        <div class="image-box">
+            <img src="https://images.tokopedia.net/img/cache/700/VqbjIT/2021/6/15/2841f22e-460d-4536-b633-8a38d726b231.jpg" alt="Produk">
+        </div>
+        <div class="content">
+            <div class="product-name">Kopi Kenangan Mantan Gula Aren 250ml - Bundle 4 Pcs</div>
+            <div class="price">Rp38.000</div>
+            <div class="discount-container">
+                <span class="discount-badge">10%</span>
+                <span class="strike-price">Rp42.000</span>
+            </div>
+            <div class="shop-info">
+                <span class="location">Tangerang</span>
+            </div>
+            <div class="rating-info">
+                <span class="star">★</span> 4.8 | Terjual 10rb+
+            </div>
+        </div>
+    </a>
+</div>
+
+</body>
+</html>

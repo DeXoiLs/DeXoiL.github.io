@@ -1,0 +1,308 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeXoiL Store | Koleksi Fashion Eksklusif</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dex-green: #03ac0e;
+            --dex-dark: #212121;
+            --dex-gray: #6d7588;
+            --bg-light: #f0f3f7;
+            --white: #ffffff;
+            --price-red: #ee4d2d;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--bg-light);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background: var(--white);
+            padding: 12px 5%;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--dex-green);
+            text-decoration: none;
+            letter-spacing: -1px;
+        }
+
+        .search-container {
+            flex-grow: 1;
+        }
+
+        .search-container input {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            outline: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .search-container input:focus {
+            border-color: var(--dex-green);
+        }
+
+        /* CONTAINER */
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        /* PROMO BANNER */
+        .promo-banner {
+            background: linear-gradient(135deg, #1a1a1a 0%, #03ac0e 100%);
+            color: var(--white);
+            padding: 50px 20px;
+            text-align: center;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 20px rgba(3, 172, 14, 0.15);
+        }
+
+        .promo-banner h1 {
+            margin: 0;
+            font-size: 32px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.9; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* GRID PRODUK */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 16px;
+        }
+
+        /* CARD PRODUK */
+        .product-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid transparent;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+            border: 1px solid var(--dex-green);
+        }
+
+        .product-card img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .product-title {
+            font-size: 14px;
+            color: var(--dex-dark);
+            height: 40px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .price {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--dex-dark);
+            margin-bottom: 4px;
+        }
+
+        .discount-container {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 8px;
+        }
+
+        .discount-badge {
+            background: #ffeae9;
+            color: #eb3d32;
+            font-size: 10px;
+            font-weight: 800;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        .old-price {
+            color: var(--dex-gray);
+            font-size: 11px;
+            text-decoration: line-through;
+        }
+
+        .shop-loc {
+            font-size: 12px;
+            color: var(--dex-gray);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        .shop-loc::before {
+            content: "⚡";
+            color: var(--dex-green);
+            margin-right: 4px;
+        }
+
+        .rating {
+            font-size: 11px;
+            color: var(--dex-gray);
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+        }
+
+        .rating span {
+            color: #ffc400;
+            margin-right: 4px;
+        }
+
+        /* BUTTON BUY */
+        .btn-buy {
+            margin-top: 12px;
+            padding: 8px;
+            background: transparent;
+            color: var(--dex-green);
+            border: 1px solid var(--dex-green);
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .btn-buy:hover {
+            background: var(--dex-green);
+            color: white;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1100px) { .product-grid { grid-template-columns: repeat(3, 1fr); } }
+        @media (max-width: 768px) { .product-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 480px) { 
+            .product-grid { grid-template-columns: 1fr; }
+            .promo-banner h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="index.html" class="logo">DeXoiL</a>
+    <div class="search-container">
+        <input type="text" placeholder="Cari fashion & aksesoris di DeXoiL Store...">
+    </div>
+</nav>
+
+<div class="container">
+    
+    <div class="promo-banner">
+        <h1>DeXoiL Otomotif</h1>
+        <p>Upgrade gayamu dengan koleksi aksesoris premium terlaris!</p>
+    </div>
+
+    <div class="product-grid">
+
+        <div class="product-card">
+            <img src="https://astraotoshop.com/asset/2023/10/31/3f3f6932-1250-4e58-9fc3-805f517306bc+fa+poster+a3+++2w.webp" alt="oli">
+            <div class="product-info">
+                <div class="product-title">Oli Aspira Motor Matic 20W-40 0.8 Liter Terbaru March 2026</div>
+                <div class="price">Rp50.000</div>
+                <div class="shop-loc">Jakarta Selatan</div>
+                <div class="rating"><span>★</span> 5.0 | Terjual 120</div>
+                <button class="btn-buy">Beli</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="https://image.agenhydraulicjack.com/s3/productimages/webp/co37182/p1005703/w600-h600/577d9b63-311d-4e96-b5bf-ad01a40156c1.jpg" alt="Dongkrak">
+            <div class="product-info">
+                <div class="product-title">Jual Dongkrak Botol Hidrolik Toe-Lift SHL-20S Top Cap 20 ton Stroke 150mm Sun Run</div>
+                <div class="price">Rp149.000</div>
+                <div class="shop-loc">Bandung</div>
+                <div class="rating"><span>★</span> 4.0 | Terjual 87</div>
+                <button class="btn-buy">Beli</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="https://down-id.img.susercontent.com/file/id-11134207-7r98s-llq26j26r2fz91" alt="Kunci roda">
+            <div class="product-info">
+                <div class="product-title">KUNCI RODA TRUK / KUNCI RODA ENGKEL / PS100 UKURAN 21 X 26 - OTOMOTIF</div>
+                <div class="price">Rp200.000</div>
+                <div class="shop-loc">Surabaya</div>
+                <div class="rating"><span>★</span> 5.0 | Terjual 1rb+</div>
+                <button class="btn-buy">Beli</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="https://s.garasi.id/q80/store_products/cc1db3d6-3a05-42bc-8513-01448f9ab9da.png" alt="Aki">
+            <div class="product-info">
+                <div class="product-title">AKI MOBIL INCOE GOLD NS40Z - Garasi.id</div>
+                <div class="price">Rp200.000</div>
+                <div class="shop-loc">Jakarta Pusat</div>
+                <div class="rating"><span>★</span> 4.5 | Terjual 10</div>
+                <button class="btn-buy">Beli</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="https://s.garasi.id/q80/store_products/2dc044e6-2616-4f8e-8112-62c4e796daab.jpg" alt="Busi">
+            <div class="product-info">
+                <div class="product-title">Jual BUSI MOBIL MEREK ASPIRA</div>
+                <div class="price">Rp115.000</div>
+                <div class="shop-loc">Semarang</div>
+                <div class="rating"><span>★</span> 4.7 | Terjual 98</div>
+                <button class="btn-buy">Beli</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
